@@ -78,13 +78,11 @@ function App() {
 
 
   function handleAutoPlay() {
-    const autoPlayIndex: number = getRandomNumber(1, 24)
+    const autoPlayIndex: number = getRandomNumber(1, 25)
     if (clickBock.includes(autoPlayIndex)) {
       console.log("Already Clicked", autoPlayIndex);
       handleAutoPlay()
     } else {
-
-      console.log("New Index", autoPlayIndex);
       clickHandler(autoPlayIndex);
       return;
     }
@@ -170,7 +168,7 @@ function App() {
                   <h3 className="text-gray-400 flex items-center align-center gap-1">Gems
 
                   </h3>
-                  <input type='number' value={gems - Number(clickBock.length)} onChange={(e) => setGems(Number(e.target.value))} className="bg-[#1a1d24] p-2 rounded-lg w-full" />
+                  <input type='number' value={(gems + 1) - Number(clickBock.length)} onChange={(e) => setGems(Number(e.target.value))} className="bg-[#1a1d24] p-2 rounded-lg w-full" />
                 </>
               }
 
